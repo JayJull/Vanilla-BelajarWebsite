@@ -3,150 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyek Akhir</title>
-    <link rel="stylesheet" href="/src/css/style.css">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./src/css/style.css">
 </head>
 <body>
-    <header>
-        <h1 class="h1-title">Proyek Akhir</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#project">Project</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
-            <button>Ubah Tema</button>
-        </nav>
-    </header>
-
-    <main>
-        <section aria-label="home" class="home" id="home">
-            <img src="/src/img/image.png" alt="foto-profil" class="foto-profil">
-            <div class="container-profil">
-                <h2 class="profil-name">Muhammad Izza Fakhrul Anam</h2>
-                <p class="profil-role">Fullstack Dev</p>
-                <q class="profile-quotes">Yang Sudah Boleh Pulang</q>
+    <app-header></app-header>
+    
+    <main class="container">
+        <div id="add-note" class="content">
+            <note-form></note-form>
+        </div>
+        
+        <div id="view-notes" class="content">
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search notes...">
             </div>
-        </section>
-
-        <section aria-label="about-me" class="about-me" id="about">
-            <h3 class="about-title">About Me</h3>
-            <div class="container-about">
-                <article class="text-about">
-                    <p>
-                        Halo! Nama saya Muhammad Izza Fakhrul Anam. Belakangan ini saya lagi tertarik banget sama dunia ngoding dan baru mulai mendalami web development. 
-                        <br>Saat ini, saya masih jadi mahasiswa di Politeknik Negeri Banyuwangi, dan meskipun saya belum punya pengalaman di industri, saya sangat antusias untuk terus belajar dan mengembangkan skill saya.
-                        <br>Saya fokus belajar full-stack development dan selalu mencari peluang untuk mencoba teknologi-teknologi baru. 
-                        <br>Selain ngoding, saya juga suka nonton film
-                    </p>
-                </article>
-
-                <aside>
-                    <div class="container-progress">
-                        <h3 class="progress-title">My Progress Studys</h3>
-                        <div class="progress-item">
-                            <div class="progress-name">
-                                <span>HTML</span>
-                                <span>65%</span>
-                            </div>
-                        </div>
-                        <div class="progress-item">
-                            <div class="progress-name">
-                                <span>Javascript</span>
-                                <span>20%</span>
-                            </div>
-                        </div>
-                        <div class="progress-item">
-                            <div class="progress-name">
-                                <span>CSS</span>
-                                <span>40%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container-skill">
-                        <h3 class="skill-title">My Skills</h3>
-                        <div class="skill-icon">
-                            <img src="/src/img/html-1.svg" alt="html">
-                            <p>HTML</p>
-                        </div>
-                        <div class="skill-icon">
-                            <img src="/src/img/css-3.svg" alt="css">
-                            <p>CSS</p>
-                        </div>
-                        <div class="skill-icon">
-                            <img src="/src/img/javascript-1.svg" alt="Javascript">
-                            <p>Javascript</p>
-                        </div>
-                    </div>
-                </aside>
-            </div>
-        </section>
-
-        <section aria-label="project" class="project" id="project">
-            <h3 class="project-title">My Projects</h3>
-            <div class="project-all">
-                <article class="project-card">
-                    <div class="project-info">
-                        <h4>Tupin</h4>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, accusantium eos temporibus omnis tenetur ipsum impedit vitae recusandae natus animi.</p>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <div class="project-info">
-                        <h4>Library Sistem</h4>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, accusantium eos temporibus omnis tenetur ipsum impedit vitae recusandae natus animi.</p>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <div class="project-info">
-                        <h4>Manajemen UKM Olahraga</h4>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, accusantium eos temporibus omnis tenetur ipsum impedit vitae recusandae natus animi.</p>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section aria-label="contact-me" class="contact-me" id="contact">
-            <h3 class="contact-title">Contact Me</h3>
-            <div class="contact-container">
-                <article class="contact-info">
-                    <h4>How To Contact</h4>
-                    <p>Jika anda tertarik bekerja sama. jangan ragu hubungi saya!</p>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <img src="/src/img/instagram-2016-5.svg" alt="instagram">
-                        </div>
-                        <span>zaa.fn</span>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <img src="/src/img/official-gmail-icon-2020-.svg" alt="gmail">
-                        </div>
-                        <span>izzafakhrul@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <img src="/src/img/whatsapp-3.svg" alt="whatsapp">
-                        </div>
-                        <span>(+62) 821-2193-32142</span>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <img src="src/img/location.svg" alt="location">
-                        </div>
-                        <span>Banyuwangi, Jawa Timur</span>
-                    </div>
-                </article>
-            </div>
-        </section>
+            <h2>Your Notes</h2>
+            <div class="notes-grid" id="notesContainer"></div>
+        </div>
+        
+        <div id="archived-notes" class="content">
+            <h2>Archived Notes</h2>
+            <div class="notes-grid" id="archivedContainer"></div>
+        </div>
     </main>
-
-    <footer>
-        <p>Izza Fakhrul &copy; 2025 Belajar Pemrogaman Web Dasar Dicoding</p>
+    
+    <footer class="container">
+        <p>Izza Fakhrul &copy; 2025 Notes App
+        </p>
     </footer>
 
-    <script src="/src/js/script.js"></script>
+    <script src="src/js/script.js"></script>
 </body>
 </html>
