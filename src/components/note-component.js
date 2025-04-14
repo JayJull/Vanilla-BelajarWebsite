@@ -50,15 +50,13 @@ class NoteForm extends HTMLElement {
         this.handleSubmit
       );
       
-      // Animasi saat form pertama kali dimuat
       gsap.from(this.querySelector('form'), {
         opacity: 0,
         y: 20,
-        duration: 0.5,
+        duration: 0.8,
         ease: "power2.out"
       });
       
-      // Tambahkan animasi hover pada button
       const submitBtn = this.querySelector('button[type="submit"]');
       submitBtn.addEventListener('mouseenter', () => {
         gsap.to(submitBtn, {
@@ -95,7 +93,6 @@ class NoteForm extends HTMLElement {
       submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving...';
       submitBtn.disabled = true;
       
-      // Animasi tombol saat diklik
       gsap.to(submitBtn, {
         scale: 0.95,
         duration: 0.2
@@ -105,8 +102,7 @@ class NoteForm extends HTMLElement {
         await api.createNote(noteData);
         titleInput.value = "";
         bodyInput.value = "";
-        
-        // Animasi sukses
+                
         gsap.to(submitBtn, {
           backgroundColor: "#4caf50",
           duration: 0.3,
@@ -120,8 +116,7 @@ class NoteForm extends HTMLElement {
         }
       } catch (error) {
         console.error("Error creating note:", error);
-        
-        // Animasi error
+                
         gsap.to(submitBtn, {
           backgroundColor: "#f44336",
           duration: 0.3,
@@ -133,8 +128,6 @@ class NoteForm extends HTMLElement {
       } finally {
         submitBtn.innerHTML = originalContent;
         submitBtn.disabled = false;
-        
-        // Kembalikan skala tombol
         gsap.to(submitBtn, {
           scale: 1,
           duration: 0.2
@@ -157,8 +150,7 @@ class LoadingIndicator extends HTMLElement {
       this.style.flexDirection = "column";
       this.style.padding = "40px";
       this.style.color = "var(--primary-color)";
-      
-      // Tambahkan animasi pulsing pada loading indicator
+
       const spinner = this.querySelector('.fa-spinner');
       setTimeout(() => {
         gsap.to(spinner, {
@@ -169,7 +161,6 @@ class LoadingIndicator extends HTMLElement {
           ease: "power1.inOut"
         });
         
-        // Animasi teks loading
         gsap.to(this.querySelector('p'), {
           opacity: 0.6,
           duration: 1,
@@ -235,11 +226,9 @@ class NoteCard extends HTMLElement {
         );
       }
       
-      // Tambahkan animasi saat catatan dibuat
       this.style.opacity = "0";
       this.style.transform = "translateY(20px)";
       
-      // Gunakan setTimeout untuk memastikan DOM sudah terender
       setTimeout(() => {
         gsap.to(this, {
           opacity: 1,
@@ -261,7 +250,6 @@ class NoteCard extends HTMLElement {
         try {
           await api.deleteNote(id);
           
-          // Tambahkan animasi sebelum menghapus
           gsap.to(this, {
             opacity: 0,
             y: -20,
@@ -291,7 +279,6 @@ class NoteCard extends HTMLElement {
       try {
         await api.archiveNote(id);
         
-        // Tambahkan animasi saat mengarsipkan
         gsap.to(this, {
           opacity: 0,
           x: 100,
@@ -325,7 +312,6 @@ class NoteCard extends HTMLElement {
       try {
         await api.unarchiveNote(id);
         
-        // Tambahkan animasi saat mengembalikan dari arsip
         gsap.to(this, {
           opacity: 0,
           x: -100,
