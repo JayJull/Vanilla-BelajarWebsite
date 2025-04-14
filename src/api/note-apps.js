@@ -1,4 +1,4 @@
-const BASE_URL = 'https://notes-api.dicoding.dev/v2';
+const BASE_URL = "https://notes-api.dicoding.dev/v2";
 
 const api = {
   async getNotes() {
@@ -21,11 +21,11 @@ const api = {
 
   async createNote(note) {
     const response = await fetch(`${BASE_URL}/notes`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(note)
+      body: JSON.stringify(note),
     });
     const result = await response.json();
     return result;
@@ -33,7 +33,7 @@ const api = {
 
   async archiveNote(id) {
     const response = await fetch(`${BASE_URL}/notes/${id}/archive`, {
-      method: 'POST',
+      method: "POST",
     });
     const result = await response.json();
     return result;
@@ -41,7 +41,7 @@ const api = {
 
   async unarchiveNote(id) {
     const response = await fetch(`${BASE_URL}/notes/${id}/unarchive`, {
-      method: 'POST',
+      method: "POST",
     });
     const result = await response.json();
     return result;
@@ -49,11 +49,11 @@ const api = {
 
   async deleteNote(id) {
     const response = await fetch(`${BASE_URL}/notes/${id}`, {
-      method: 'DELETE',
+      method: "DELETE",
     });
     const result = await response.json();
     return result;
-  }
+  },
 };
 
 export default api;
